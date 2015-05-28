@@ -1,0 +1,15 @@
+{
+  "name": "twilio-worker",
+  "version": "0.0.1",
+  "description": "Processing of twilio mms/sms messages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "twilio",
+    "amqp"
+  ],
+  "author": "Gallagher Polyn",
+  "license": "ISC"
+}
