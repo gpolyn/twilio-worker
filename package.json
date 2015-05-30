@@ -11,5 +11,20 @@
     "amqp"
   ],
   "author": "Gallagher Polyn",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "crypto": "0.0.3",
+    "events": "^1.0.2",
+    "express": "^4.12.4",
+    "jackrabbit": "^3.0.8",
+    "lodash": "^3.9.3",
+    "logfmt": "^1.2.0",
+    "mongoose": "^4.0.3",
+    "mongoose-timestamp": "^0.4.0",
+    "my-postmark-uploader": "git://github.com/gpolyn/my-postmark-uploader",
+    "my-s3-uploader": "git://github.com/gpolyn/my-s3-uploader",
+    "node-uuid": "^1.4.3",
+    "promise": "^7.0.1"
+  }
 }
