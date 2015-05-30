@@ -325,7 +325,6 @@ App.prototype.stopProcessing = function() {
 // };
 
 var express = require('express');
-var Thing = ThingModel;
 
 var ERR_MAP = {
   'ArticleNotFound': 404,
