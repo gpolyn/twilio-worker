@@ -15,6 +15,7 @@ var AbstractThing = function () {
     user_id: {type: Schema.ObjectId},
     isValid: { type: Boolean },
     isPublic: { type: Boolean },
+    category: [{ type: String }],
     twilio: {},
   });
 
