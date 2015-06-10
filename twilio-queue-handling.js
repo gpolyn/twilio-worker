@@ -37,7 +37,7 @@ var twilioHandling = {
       var queryParam = {};
 
       if (_.isObject(message.twilio) && !_.isEmpty(message.twilio)){
-        queryParam['profile.mobile_number'] = message.twilio.From;
+        queryParam['profile.mobile_numbers'] = message.twilio.From;
       } else {
         queryParam['profile.email_addresses'] = message.postmark.From;
       }
