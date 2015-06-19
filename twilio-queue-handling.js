@@ -153,8 +153,8 @@ var twilioHandling = {
 
     function onSuccess(thing) {
       logger.log({ type: 'info', msg: 'job complete', queue: CONFIRM_MESSAGE_RECEIVED_QUEUE, status: 'success', validation: thing.message });
-      self.connections.queue.publish(S3_TWILIO_QUEUE, {id: thing._id, isValid: thing.isValid});
       ack();
+      self.connections.queue.publish(S3_TWILIO_QUEUE, {id: thing._id, isValid: thing.isValid});
     }
 
     function onError(err) {
