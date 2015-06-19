@@ -75,7 +75,7 @@ module.exports = function createThingModel(connection, maxAge, twilio_id, twilio
           var promise = twilio.sendMessage({
             to: thing.twilio.From,
             from: thing.twilio.To,
-            body: "Got your request: check it out at " + config.things_path + "/" + id
+            body: "Got your request: check it out at http://" + config.app_url + "/things/" + id
           })
 
           promise.then(function(result) {twilioSuccess(result)}, function(err){

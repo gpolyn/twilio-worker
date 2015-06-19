@@ -3,7 +3,7 @@
 module.exports = {
 
   // application paths
-  things_path: "http://all-in-one.ngrok.com/things",
+  app_url: process.env.APP_URL || "all-in-one.ngrok.com",
 
 
   // Services
