@@ -79,18 +79,14 @@ App.prototype.onLost = function() {
 App.prototype.updateMatchingUser = function(user_id, record) {
   logger.log({ type: 'info', msg: 'updateMatchingUser' });
   return new Promise(function(resolve, reject) {
-    console.log("about to search for..."+ user_id)
-    console.log(record);
 
     if (_.isEmpty(record.twilio)){
     var from = record.postmark.From;
-    console.log(from);
     this.User
         .findOneAndUpdate({_id: user_id},{$push: {"profile.email_addresses": from}})
         .exec(onSave);
     } else {
     var from = record.twilio.From;
-    console.log(from);
     this.User
         .findOneAndUpdate({_id: user_id},{$push: {"profile.mobile_numbers": from}})
         .exec(onSave);
@@ -99,7 +95,6 @@ App.prototype.updateMatchingUser = function(user_id, record) {
     function onSave(err, thing){
       if (err) {
         logger.log({ type: 'info', msg: 'findMatchingUser: failed to find' });
-        console.log(err);
         return reject(err);
       }
       if (!thing){

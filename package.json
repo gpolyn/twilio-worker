@@ -1,6 +1,6 @@
 {
   "name": "twilio-worker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Processing of twilio mms/sms messages",
   "main": "index.js",
   "scripts": {

@@ -9,6 +9,8 @@ var VALIDATE_TWILIO_QUEUE = 'validate.text.twilio';
 var CONFIRM_MESSAGE_RECEIVED_QUEUE = 'confirm_receipt.text.twilio';
 var S3_TWILIO_QUEUE = 's3.text.twilio';
 
+// FUCK THAT
+
 var twilioHandling = {
   
   assignHandlersToQueues: function(){
@@ -175,8 +177,8 @@ var twilioHandling = {
 
     function onSuccess(thing) {
       logger.log({ type: 'info', msg: 'job complete', queue: S3_TWILIO_QUEUE, status: 'success'});
-      self.connections.queue.publish(NEW_TWILIO_QUEUE, {id: thing});
       ack();
+      self.connections.queue.publish(NEW_TWILIO_QUEUE, {id: thing});
     }
 
     function onError(err) {
