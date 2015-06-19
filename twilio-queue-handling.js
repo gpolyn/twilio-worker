@@ -30,7 +30,6 @@ var twilioHandling = {
   findMatchingUser: function(message) {
     logger.log({ type: 'info', msg: 'findMatchingUser' });
     return new Promise(function(resolve, reject) {
-      console.log(message);
       
       // only novel part!
 
@@ -41,8 +40,6 @@ var twilioHandling = {
       } else {
         queryParam['profile.email_addresses'] = message.postmark.From;
       }
-      console.log("the params...")
-      console.log(queryParam)
 
       this.User
           .findOne(queryParam)
@@ -73,7 +70,6 @@ var twilioHandling = {
 
     function onSuccess(thing_id) {
       logger.log({ type: 'info', msg: 'job complete', queue: CHECK_FOR_USER_QUEUE, status: 'success' });
-      // console.log(job)
       self.connections.queue.publish(RECORD_NEW_MESSAGE_QUEUE, {user_id: thing_id, message: job});
       ack();
     }
@@ -108,7 +104,6 @@ var twilioHandling = {
 
   saveTwilioJob: function(job, ack) {
     logger.log({ type: 'info', msg: 'handling job', queue: RECORD_NEW_MESSAGE_QUEUE});
-    console.log(job);
     var self = this;
     var user_id = job.user_id
     this
@@ -143,7 +138,6 @@ var twilioHandling = {
 
     function onError(err) {
       logger.log({ type: 'info', msg: 'job complete', queue: VALIDATE_TWILIO_QUEUE, status: 'failure', error: err.message });
-      console.log(err.message);
       ack();
     }
   },
